@@ -3,9 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var hbs = require('hbs');//added
+const fs = require('fs');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -19,13 +22,55 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+
+//Registering Partials
+hbs.registerPartials(path.join(__dirname, 'views', 'partials'))
+hbs.registerPartial('partial_name', 'partial value');
+
+
+
+/* GET home page. */
+app.get('/', function (req, res, next) {
+  res.render('index', { title: 'Miami' });
+});
+
+app.get('/page2', function (req, res, next) {
+  res.render('index', { title: 'Page 2' });
+});
+
+app.get('/form', function (req, res, next) {
+  res.render('form', { title: 'Form' });
+});
+
+app.post('/form', function(req, res, next){
+  console.log(req.body.firstname);
+  //res.render('formresponse',{firstname:req.body.firstname, lastname:req.body.lastname});
+  res.render('formresponse', req.body);
+});
+
+app.get('/form', function (req, res, next) {
+  res.render('form', { title: 'Form' });
+});
+
+app.post('/guess', function(req, res, next){
+  console.log(req.body.firstname);
+  //res.render('formresponse',{firstname:req.body.firstname, lastname:req.body.lastname});
+  res.render('formresponse', req.body);
+});
+
+app.get('/guess', function (req, res, next) {
+  console.log(req);
+  res.render('index', { title: req.params.name });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 // error handler
 app.use(function(err, req, res, next) {
