@@ -1,40 +1,53 @@
-<section class="hero">
+<section class="hero champ-hero">
   <div>
-    <p class="eyebrow">Forever-inspired wellness tracker</p>
-    <h1>Small movement. Real consistency.</h1>
-    <p>
-      Move Your Way helps you track daily wellness habits, from walking and yoga
-      to stretching and running, so progress feels simple and sustainable.
+    <p class="eyebrow">Movement. Mindset. Consistency.</p>
+    <h1>Let’s Go Champs.</h1>
+    <p class="hero-copy">
+      This is not about doing the most. It is about showing up, building momentum
+      and becoming the kind of person who keeps going.
     </p>
-    <a class="button" href="/addactivity">Add Activity</a>
+    <p class="hero-copy">
+      Log your movement. Stack the days. Move your way.
+    </p>
+    <a class="button" href="/addactivity">Log Today’s Movement</a>
   </div>
 </section>
 
 <section class="stats-grid">
-  <div class="card">
+  <div class="card stat-card">
+    <p class="stat-label">Minutes Moved</p>
     <h2>{{totalMinutes}}</h2>
-    <p>Total minutes moved</p>
+    <p>Every minute counts.</p>
   </div>
 
-  <div class="card">
+  <div class="card stat-card">
+    <p class="stat-label">Days You Showed Up</p>
     <h2>{{totalActivities}}</h2>
-    <p>Activities logged</p>
+    <p>Progress starts with action.</p>
   </div>
 
-  <div class="card">
+  <div class="card stat-card gold-card">
+    <p class="stat-label">Current Streak</p>
     <h2>{{streak}}</h2>
-    <p>Day consistency streak</p>
+    <p>Stack the days.</p>
   </div>
+</section>
+
+<section class="identity-box">
+  <p>You have shown up {{streak}} days in a row.</p>
+  <h3>This is how consistency becomes identity.</h3>
 </section>
 
 <section class="content-grid">
   <div class="card large-card">
-    <h2>Activity Breakdown</h2>
+    <p class="eyebrow">Your movement breakdown</p>
+    <h2>Where Your Energy Is Going</h2>
     <canvas id="activityChart"></canvas>
   </div>
 
   <div class="card">
-    <h2>Recent Activity</h2>
+    <p class="eyebrow">Recent wins</p>
+    <h2>Proof You Showed Up</h2>
 
     {{#if recentActivities.length}}
       {{#each recentActivities}}
@@ -45,7 +58,7 @@
         </div>
       {{/each}}
     {{else}}
-      <p>No activities yet. Start by adding your first movement.</p>
+      <p>You have not logged anything yet. Start today. Let’s go.</p>
     {{/if}}
   </div>
 </section>
@@ -61,7 +74,7 @@
       datasets: [{
         label: 'Minutes by Activity',
         data: data,
-        backgroundColor: '#7DBA43'
+        backgroundColor: '#C6A85C'
       }]
     },
     options: {
