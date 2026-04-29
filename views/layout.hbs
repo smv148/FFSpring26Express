@@ -2,13 +2,23 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    {{>header}}
+    <nav>
+      <div class="logo">Move Your Way</div>
+      <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/addactivity">Add Activity</a>
+        <a href="/history">History</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
+
     <main>
-    {{{body}}}
+      {{{body}}}
     </main>
-    {{>footer}}
   </body>
 </html>

@@ -1,2 +1,76 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<section class="hero">
+  <div>
+    <p class="eyebrow">Forever-inspired wellness tracker</p>
+    <h1>Small movement. Real consistency.</h1>
+    <p>
+      Move Your Way helps you track daily wellness habits, from walking and yoga
+      to stretching and running, so progress feels simple and sustainable.
+    </p>
+    <a class="button" href="/addactivity">Add Activity</a>
+  </div>
+</section>
+
+<section class="stats-grid">
+  <div class="card">
+    <h2>{{totalMinutes}}</h2>
+    <p>Total minutes moved</p>
+  </div>
+
+  <div class="card">
+    <h2>{{totalActivities}}</h2>
+    <p>Activities logged</p>
+  </div>
+
+  <div class="card">
+    <h2>{{streak}}</h2>
+    <p>Day consistency streak</p>
+  </div>
+</section>
+
+<section class="content-grid">
+  <div class="card large-card">
+    <h2>Activity Breakdown</h2>
+    <canvas id="activityChart"></canvas>
+  </div>
+
+  <div class="card">
+    <h2>Recent Activity</h2>
+
+    {{#if recentActivities.length}}
+      {{#each recentActivities}}
+        <div class="activity-item">
+          <strong>{{this.type}}</strong>
+          <p>{{this.duration}} minutes · {{this.intensity}} · {{this.mood}}</p>
+          <small>{{this.date}}</small>
+        </div>
+      {{/each}}
+    {{else}}
+      <p>No activities yet. Start by adding your first movement.</p>
+    {{/if}}
+  </div>
+</section>
+
+<script>
+  const labels = {{{chartLabels}}};
+  const data = {{{chartData}}};
+
+  new Chart(document.getElementById('activityChart'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Minutes by Activity',
+        data: data,
+        backgroundColor: '#7DBA43'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
+</script>

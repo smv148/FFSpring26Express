@@ -1,0 +1,36 @@
+<section class="page-header">
+  <p class="eyebrow">Your wellness record</p>
+  <h1>Activity History</h1>
+  <p>Review your movement habits and see how consistency builds over time.</p>
+</section>
+
+<section class="card">
+  {{#if activities.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Activity</th>
+          <th>Duration</th>
+          <th>Intensity</th>
+          <th>Mood</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each activities}}
+          <tr>
+            <td>{{this.date}}</td>
+            <td>{{this.type}}</td>
+            <td>{{this.duration}} min</td>
+            <td>{{this.intensity}}</td>
+            <td>{{this.mood}}</td>
+            <td>{{this.notes}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p>No activity history yet.</p>
+  {{/if}}
+</section>

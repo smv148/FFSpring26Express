@@ -1,0 +1,43 @@
+<section class="page-header">
+  <p class="eyebrow">Log your movement</p>
+  <h1>Add Activity</h1>
+  <p>Track what you did today and build a wellness routine that feels realistic.</p>
+</section>
+
+<form class="form-card" action="/addactivity" method="POST">
+  <label for="type">Activity Type</label>
+  <select name="type" id="type" required>
+    <option value="Walking">Walking</option>
+    <option value="Running">Running</option>
+    <option value="Yoga">Yoga</option>
+    <option value="Stretching">Stretching</option>
+    <option value="Cycling">Cycling</option>
+    <option value="Strength Training">Strength Training</option>
+  </select>
+
+  <label for="duration">Duration in Minutes</label>
+  <input type="number" name="duration" id="duration" min="1" required>
+
+  <label for="intensity">Intensity</label>
+  <select name="intensity" id="intensity">
+    <option value="Low">Low</option>
+    <option value="Moderate">Moderate</option>
+    <option value="High">High</option>
+  </select>
+
+  <label for="mood">How did you feel?</label>
+  <select name="mood" id="mood">
+    <option value="Energized">Energized</option>
+    <option value="Calm">Calm</option>
+    <option value="Motivated">Motivated</option>
+    <option value="Tired but proud">Tired but proud</option>
+  </select>
+
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" required>
+
+  <label for="notes">Notes</label>
+  <textarea name="notes" id="notes" rows="4" placeholder="Example: Morning walk before class"></textarea>
+
+  <button type="submit">Save Activity</button>
+</form>
