@@ -28,14 +28,14 @@ nav {
 }
 
 .logo span {
-  color: #ffffff;
+  color: #c6a85c;
   font-weight: 900;
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
 
 .logo small {
-  color: #c6a85c;
+  color: #ffffff;
   font-weight: 700;
   margin-top: 5px;
 }
