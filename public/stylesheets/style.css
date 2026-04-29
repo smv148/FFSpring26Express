@@ -64,7 +64,7 @@ main {
 .champ-hero {
   background:
     linear-gradient(135deg, rgba(7, 27, 47, 0.92), rgba(47, 92, 42, 0.88)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    url("/images/champs-hero.jpg");
   background-size: cover;
   background-position: center;
   color: white;
