@@ -35,7 +35,7 @@ nav {
 }
 
 .logo small {
-  color: #c6a85c;
+  color: #ffffff;
   font-weight: 700;
   margin-top: 5px;
 }
@@ -63,7 +63,7 @@ main {
 
 .champ-hero {
   background:
-    linear-gradient(135deg, rgba(7, 27, 47, 0.92), rgba(47, 92, 42, 0.88)),
+    linear-gradient(135deg, rgba(7, 27, 47, 0.55), rgba(47, 92, 42, 0.35)),
     url("/images/champs-hero.jpg");
   background-size: cover;
   background-position: center;
