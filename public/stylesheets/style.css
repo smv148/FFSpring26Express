@@ -35,7 +35,7 @@ nav {
 }
 
 .logo small {
-  color: #ffffff;
+  color: #c6a85c;
   font-weight: 700;
   margin-top: 5px;
 }
@@ -62,38 +62,12 @@ main {
 }
 
 .champ-hero {
-  position: relative;
-  border-radius: 30px;
-  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(7, 27, 47, 0.92), rgba(47, 92, 42, 0.88)),
+    url("/images/champs-hero.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
-}
-
-/* IMAGE LAYER */
-.champ-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/images/champs-hero.jpg") center/cover no-repeat;
-  z-index: 0;
-}
-
-/* OVERLAY (controlled separately) */
-.champ-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(7, 27, 47, 0.65),
-    rgba(47, 92, 42, 0.35)
-  );
-  z-index: 1;
-}
-
-/* TEXT ABOVE EVERYTHING */
-.champ-hero > div {
-  position: relative;
-  z-index: 2;
 }
 
 .hero h1,
