@@ -143,3 +143,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+app.get('/demo', function(req, res) {
+  res.render('demo', { title: 'Demo' });
+});
