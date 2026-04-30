@@ -130,6 +130,10 @@ app.get('/about', function(req, res) {
   res.render('about', { title: 'About Move Your Way' });
 });
 
+app.get('/demo', function(req, res) {
+  res.render('demo', { title: 'Demo' });
+});
+
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -143,7 +147,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-app.get('/demo', function(req, res) {
-  res.render('demo', { title: 'Demo' });
-});
